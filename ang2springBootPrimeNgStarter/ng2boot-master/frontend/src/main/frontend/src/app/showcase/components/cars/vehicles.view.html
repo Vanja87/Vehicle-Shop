@@ -1,0 +1,46 @@
+<div class="content-section introduction">
+    <div>
+        <span class="feature-title">{{caption}}</span>
+        <span>Lorem ipsum dolor sit amet, his an tantas iisque instructior, 
+            in eam tollit doming aliquando. Alterum complectitur in eos, 
+            ius dictas inermis nonumes cu. Eam nulla iudicabit ut, 
+            atqui constituto ea eos. Dolores sapientem dignissim ea pro, 
+            ad voluptaria appellantur pro. No qui corpora verterem philosophia, 
+            falli doctus numquam mei ad.</span>
+    </div>
+</div>
+
+<!--<div class="content-section comboboxes">-->
+<p-dropdown [options]="manufacturers" placeholder="Select a Manufacturer" [(ngModel)]="selectedVehicleManufacturer" (ngModelChange)="onChangeManufacturer($event)"></p-dropdown>
+<p-dropdown [options]="models" placeholder="Select a Model" [(ngModel)]="selectedVehicleModel" (ngModelChange)="onChangeModel($event)"></p-dropdown>
+<!--</div>-->
+
+<div class="content-section data">
+<p-dataList [value]="vehicles" [paginator]="true" [rows]="5">
+    <p-header>
+        List of vehicles
+    </p-header>
+    <ng-template let-vehicle pTemplate="item">
+        <div class="ui-g ui-fluid vehicle-item">
+            <div class="ui-g-12 ui-md-3" style="text-align:center">
+                <img src="assets/showcase/images/demo/car/{{vehicle.imagePath}}.jpeg">
+            </div>
+            <div class="ui-g-12 ui-md-9 car-details">
+                <div class="ui-g">
+                    <div class="ui-g-2 ui-sm-6">Name: </div>
+                    <div class="ui-g-10 ui-sm-6">{{vehicle.name}}</div>
+                    
+                    <div class="ui-g-2 ui-sm-6">Year: </div>
+                    <div class="ui-g-10 ui-sm-6">{{vehicle.age}}</div>
+                    
+                    <div class="ui-g-2 ui-sm-6">Price: </div>
+                    <div class="ui-g-10 ui-sm-6">{{vehicle.price}}</div>
+                    
+                    <div class="ui-g-2 ui-sm-6">Miles: </div>
+                    <div class="ui-g-10 ui-sm-6">{{vehicle.actualMiles}}</div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-dataList>
+</div>
